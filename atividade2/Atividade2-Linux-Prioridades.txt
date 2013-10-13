@@ -1,0 +1,36 @@
+ATIVIDADES DE PRIORIDADES DE PROCESSOS COM O LINUX
+**************************************************
+
+- Vamos fazer o login como "root" no "tty" 
+- Verificaremos os processos em tempo real: top
+- Em outro terminal (ex: "tty2") vamos fazer o seguinte código em C:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	double x=0.01;
+
+	while (x > 0)
+		x = (x*x*x) + pow(x,0.5) + (x/5);
+
+	return 0;
+}
+- Vamos compilar o programa: gcc laco.c -o laco.out -lm
+- Vamos executá-lo agora: ./laco.out
+- Voltemos ao terminal "tty1" e observemos o processo no gerenciador de processos ("top")
+- Vamos agora nos logar no "tty3" 
+- Executemos o comando: nice -n -20 ./laco.out
+- Voltemos ao terminal "tty1" e observemos o processo no gerenciador de processos ("top") 
+- Vamos mudar a prioridade do primeiro "laco.out" rodando no "tty4": renice -20 id_do_laco1
+- Voltemos ao terminal "tty1" e observemos o processo no gerenciador de processos ("top") 
+- Observe que o tempo entre as duas execuções do programa "laco.out" são bem próximos agora
+
+Links Práticos
+**************
+http://www.dicas-l.com.br/arquivo/alterando_a_prioridade_de_processos.php#.UZFfz6I3u7w
+http://www.devmedia.com.br/prioridade-a-processos-linux/23781
+
+Teoria
+******
+TANENBAUM, A.S, Sistemas Operacionais - Projeto e Implementação

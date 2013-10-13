@@ -1,0 +1,17 @@
+ATIVIDADE 4
+-----------
+Utilizando o programa "laco.out" gerado nas atividades anteriores, fazer testes alterando as 
+prioridades. Execute sempre 2 cópias do programa, um em tty1 e outra em tty2.
+No tty3 execute o top para acompanhar o que ira ocorrer.
+No tty4 utilize o renice para mudar as prioridades.
+Faça um Printscreen de cada caso seguinte, monte uma tabela e cole tudo no Word.
+
+TESTE	tty1	CPU	tty2	CPU
+A	1		20
+B	1		10
+C	5		20
+D	5		10
+E	-5		10
+F	-5		20
+G	-10		10
+H	-10		20

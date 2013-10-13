@@ -1,0 +1,38 @@
+ATIVIDADES EXTRAS DE PROCESSOS COM O LINUX
+******************************************
+
+Parte 1
+-------
+- Vamos logar no "tty1"
+- Vamos trabalhar com um arquivo qualquer, por exemplo o "laco.c" do exemplo anterior
+- Utilizemos o comando "tail", que permite listar as últimas linhas de um arquivo
+- Digite o comando: "tail -f laco.c"
+- Vamos no "tty2" e verifiquemos o estado do processo anterior: ps -lt1
+- Observe a segunda coluna, o processo está agora em estado de (S)leep
+- Vamos no "tty1" e vamos dar um Ctrl + C (Matar o processo - KILL)
+
+Parte 2
+-------
+- Voltemos ao "tty1"
+- Vamos até o diretório "bin": cd /bin
+- Vamos listar o shell "bash": ls -la bash
+- Agora iniciaremos um sheel "bash" dentro do atual: ./bash
+- Listemos agora a estrutura de processos com o comando: pstree
+- Vamos agora a lista dos processos: ps -lt1
+- Para sair do "bash" digitemos: exit
+
+Parte 3
+-------
+- Voltemos ao "tty1"
+- Vamos até o diretório "bin": cd /bin
+- Vamos listar os shells disponíveis: ls -la *sh
+- Tente agora utilizar os outros shells: ash, bash, ksh, tcsh, zsh
+
+Teoria sobre o ASH
+******************
+http://www.in-ulm.de/~mascheck/various/ash/
+http://en.wikipedia.org/wiki/Almquist_shell
+
+Teoria
+******
+TANENBAUM, A.S, Sistemas Operacionais - Projeto e Implementação

@@ -1,0 +1,45 @@
+ATIVIDADES DE PROCESSOS COM O LINUX
+***********************************
+
+-Logar-se em "tty1" com um usuário (ex: root)
+-Listar os processos do "tty1" (-T) com detalhes (-f): ps -Tf *OU* ps -F (extra full)
+-Vamos abrir o editor de textos "vi": vi
+-Logar-se em "tty2" com um usuário (ex: root)
+-No "tty2", listar os processos do "tty1" (-t1) no formato longo (-l): ps -lt1
+-Observe a segunda coluna, com o estado (S) do processo
+-Note que o "bash" e o "vi" estão como "S"
+-No "tty2" vamos enviar um sinal para o o PID do "vi": kill -STOP id_do_vi
+-Volte para o "tty1" e veja que o "vi" foi parado
+-No "tty2" digite: ps -lt1 
+-Note que o estado do "vi" (segunda coluna), está agora como T
+-No "tty1" digite: ps -lt1  ... Lembre-se dos estados: (S)leeping, s(T)opped, (R)unning
+-Para retomarmos o "vi" precisamos traze-lo para "foreground": fg +id_do_vi
+-No "tty2" digite: ps -lt1 
+-O "vi" foi retomado no "tty1"
+-Se quisermos terminar o processo de forma definitiva, no "tty2": kill -KILL id_do_vi
+-Se voltarmos no "tty1" veremos que o "vi" foi morto
+
+OBSERVAÇÕES
+***********
+Comandos utilizados: ps, kill, fg
+Comandos relacionados: bg
+
+Observação 1
+************
+O comando Ctrl+Z envia um sinal de STOP para o processo que está rodando.
+Tente abrir o "vi", dar um Ctrl+Z e ver o estado dos processos.
+
+Observação 2
+************
+Você pode deixar um processo rodando normalmente (foreground) ou ao fundo (background).
+fg +id_do_processo -> Coloca um processo em primeiro plano (foreground)
+bg +id_do_processo -> Coloca um processo em segundo plano (background)
+
+Links Práticos
+**************
+http://www.infowester.com/linprocessos.php
+http://www.vivaolinux.com.br/artigo/Processos
+
+Teoria
+******
+TANENBAUM, A.S, Sistemas Operacionais - Projeto e Implementação
